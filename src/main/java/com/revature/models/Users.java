@@ -1,23 +1,57 @@
 package com.revature.models;
 
 import java.io.Serializable;
+import java.util.List;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="Users")
 public class Users implements Serializable{
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
+
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="user_id")
 	private int userId;
+	@Column(name="username")
 	private String username;
+	@Column(name="first_name")
 	private String firstName;
+	@Column(name="last_name")
 	private String lastName;
+	@Column(name="user_email")
 	private String email;
-	private int roleId;
+	@ManyToOne(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
+	@JoinColumn(name="user_role_id")
+	private UserRole userRole;
+	@OneToMany(mappedBy="author",fetch=FetchType.EAGER)
+	private List<Reimbursement> reimbursements;
 	
 	public Users() {
 		super();
+	}
+	
+	public Users(String username, String firstName, String lastName, String email, UserRole userRole) {
+		this.username = username;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+		this.userRole = userRole;
 	}
 
 	public int getUserId() {
@@ -60,12 +94,21 @@ public class Users implements Serializable{
 		this.email = email;
 	}
 
-	public int getRoleId() {
-		return roleId;
+
+	public List<Reimbursement> getReimbursements() {
+		return reimbursements;
 	}
 
-	public void setRoleId(int roleId) {
-		this.roleId = roleId;
+	public void setReimbursements(List<Reimbursement> reimbursements) {
+		this.reimbursements = reimbursements;
+	}
+
+	public UserRole getUserRole() {
+		return userRole;
+	}
+
+	public void setUserRole(UserRole userRole) {
+		this.userRole = userRole;
 	}
 
 	@Override
@@ -75,8 +118,9 @@ public class Users implements Serializable{
 		result = prime * result + ((email == null) ? 0 : email.hashCode());
 		result = prime * result + ((firstName == null) ? 0 : firstName.hashCode());
 		result = prime * result + ((lastName == null) ? 0 : lastName.hashCode());
-		result = prime * result + roleId;
+		result = prime * result + ((reimbursements == null) ? 0 : reimbursements.hashCode());
 		result = prime * result + userId;
+		result = prime * result + ((userRole == null) ? 0 : userRole.hashCode());
 		result = prime * result + ((username == null) ? 0 : username.hashCode());
 		return result;
 	}
@@ -105,9 +149,17 @@ public class Users implements Serializable{
 				return false;
 		} else if (!lastName.equals(other.lastName))
 			return false;
-		if (roleId != other.roleId)
+		if (reimbursements == null) {
+			if (other.reimbursements != null)
+				return false;
+		} else if (!reimbursements.equals(other.reimbursements))
 			return false;
 		if (userId != other.userId)
+			return false;
+		if (userRole == null) {
+			if (other.userRole != null)
+				return false;
+		} else if (!userRole.equals(other.userRole))
 			return false;
 		if (username == null) {
 			if (other.username != null)
@@ -120,11 +172,9 @@ public class Users implements Serializable{
 	@Override
 	public String toString() {
 		return "Users [userId=" + userId + ", username=" + username + ", firstName=" + firstName + ", lastName="
-				+ lastName + ", email=" + email + ", roleId=" + roleId + "]";
+				+ lastName + ", email=" + email + ", userRole=" + userRole + ", reimbursements=" + reimbursements + "]";
 	}
-	
-	
-	
+
 	
 
 }
