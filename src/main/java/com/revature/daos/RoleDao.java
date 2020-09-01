@@ -20,6 +20,9 @@ public class RoleDao {
 			e.printStackTrace();
 			return false;
 		}
+		finally {
+			HiberUtil.closeSes();
+		}
 	}
 	
 	public boolean updateRole(UserRole r) {
@@ -31,6 +34,9 @@ public class RoleDao {
 			e.printStackTrace();
 			return false;
 		}
+		finally {
+			HiberUtil.closeSes();
+		}
 	}
 	
 	public boolean deleteRole(UserRole r) {
@@ -41,6 +47,9 @@ public class RoleDao {
 		}catch(Exception e) {
 			e.printStackTrace();
 			return false;
+		}
+		finally {
+			HiberUtil.closeSes();
 		}
 	}
 	
@@ -58,7 +67,7 @@ public class RoleDao {
 	public List<UserRole> findAllRoles(){
 		Session ses = HiberUtil.getSession();
 		try {
-			List<UserRole> list = ses.createQuery("From UserRole").list();
+			List<UserRole> list = ses.createQuery("From UserRole", UserRole.class).list();
 			return list;
 		}catch(Exception e){
 			e.printStackTrace();

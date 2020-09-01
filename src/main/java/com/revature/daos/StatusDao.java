@@ -21,6 +21,8 @@ public class StatusDao {
 		}catch(Exception e) {
 			e.printStackTrace();
 			return false;
+		}finally {
+			HiberUtil.closeSes();
 		}
 	}
 	
@@ -32,6 +34,8 @@ public class StatusDao {
 		}catch(Exception e) {
 			e.printStackTrace();
 			return false;
+		}finally {
+			HiberUtil.closeSes();
 		}
 	}
 	
@@ -43,6 +47,8 @@ public class StatusDao {
 		}catch(Exception e) {
 			e.printStackTrace();
 			return false;
+		}finally {
+			HiberUtil.closeSes();
 		}
 	}
 	

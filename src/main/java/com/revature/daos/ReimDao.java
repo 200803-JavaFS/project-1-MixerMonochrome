@@ -22,6 +22,9 @@ public class ReimDao {
 			e.printStackTrace();
 			return false;
 		}
+		finally {
+			HiberUtil.closeSes();
+		}
 		
 	}
 	
@@ -33,6 +36,8 @@ public class ReimDao {
 		}catch(Exception e){
 			e.printStackTrace();
 			return false;
+		}finally {
+			HiberUtil.closeSes();
 		}
 	}
 	
@@ -44,6 +49,8 @@ public class ReimDao {
 		}catch(Exception e){
 			e.printStackTrace();
 			return false;
+		}finally {
+			HiberUtil.closeSes();
 		}
 	}
 	

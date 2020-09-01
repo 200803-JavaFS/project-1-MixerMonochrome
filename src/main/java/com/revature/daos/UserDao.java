@@ -23,6 +23,8 @@ public class UserDao {
 		}catch(Exception e){
 			e.printStackTrace();
 			return false;
+		}finally {
+			HiberUtil.closeSes();
 		}
 	}
 	
@@ -33,6 +35,8 @@ public class UserDao {
 			return true;
 		}catch(Exception e){
 			return false;
+		}finally {
+			HiberUtil.closeSes();
 		}
 	}
 	
@@ -44,6 +48,8 @@ public class UserDao {
 		}catch(Exception e) {
 			e.printStackTrace();
 			return false;
+		}finally {
+			HiberUtil.closeSes();
 		}
 	}
 	
@@ -61,7 +67,7 @@ public class UserDao {
 	public Users findUserByUsername(String username) {
 		Session ses = HiberUtil.getSession();
 		try {
-			Users u = (Users)ses.createQuery("From Users Where username = '" + username + "'").getSingleResult();
+			Users u = ses.createQuery("From Users Where username = '" + username + "'",Users.class).getSingleResult();
 			return u;
 		}catch(Exception e) {
 			e.printStackTrace();
@@ -72,7 +78,7 @@ public class UserDao {
 	public List<Users> findAllUsers(){
 		Session ses = HiberUtil.getSession();
 		try {
-			List<Users> list = ses.createQuery("From Users").list();
+			List<Users> list = ses.createQuery("From Users",Users.class).list();
 			return list;
 		}catch(Exception e) {
 			e.printStackTrace();
@@ -84,9 +90,9 @@ public class UserDao {
 		Session ses = HiberUtil.getSession();
 		try {
 			Users u = findUserByUsername(username);
-	        List<Object> sql = ses.createNativeQuery("SELECT psswrd FROM users " +
+	        List<String> sql = ses.createNativeQuery("SELECT psswrd FROM users " +
 	        	"where user_id = " +
-	        	u.getUserId())
+	        	u.getUserId(),String.class)
 	            .list();
 	           String pass = sql.get(0).toString();
 	           if(pass.equals(password)) {
