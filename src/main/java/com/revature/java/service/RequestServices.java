@@ -1,5 +1,9 @@
 package com.revature.java.service;
 
-public class RequestServices {
+import com.revature.models.TicketDTO;
 
+public class RequestServices {
+	public boolean submitTicket(TicketDTO t) {
+		return false;
+	}
 }

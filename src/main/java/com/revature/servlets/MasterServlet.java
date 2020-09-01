@@ -35,12 +35,17 @@ public class MasterServlet extends HttpServlet{
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		res.setContentType("application/json");
 		res.setStatus(400);
-		final String URI = req.getRequestURI();
+		final String URI = req.getRequestURI().replace("/project0/", "");
 		String[] portions = URI.split("/");
 		System.out.println(Arrays.toString(portions));
 		
 		switch(portions[0]) {
+		case "test":
+			res.setStatus(200);
+			res.getWriter().print("Gets to Master Servlet and reads 'test'");
+			break;
 		case "login":
+			System.out.println("Gets to login");
 			lCont.login(req, res);
 			break;
 		case "logout":

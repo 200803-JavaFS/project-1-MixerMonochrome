@@ -1,11 +1,14 @@
 package com.revature.daos;
 
 import org.hibernate.Session;
+import org.hibernate.query.NativeQuery;
+import org.hibernate.type.StringType;
 
 import com.revature.models.Users;
 import com.revature.util.HiberUtil;
 
 import java.util.List;
+import java.util.Map;
 
 public class UserDao {
 	public UserDao(){
@@ -58,7 +61,7 @@ public class UserDao {
 	public Users findUserByUsername(String username) {
 		Session ses = HiberUtil.getSession();
 		try {
-			Users u = (Users)ses.createQuery("From Users Where username = " + username).getSingleResult();
+			Users u = (Users)ses.createQuery("From Users Where username = '" + username + "'").getSingleResult();
 			return u;
 		}catch(Exception e) {
 			e.printStackTrace();
@@ -74,6 +77,27 @@ public class UserDao {
 		}catch(Exception e) {
 			e.printStackTrace();
 			return null;
+		}
+	}
+	
+	public boolean checkPass(String username, String password) {
+		Session ses = HiberUtil.getSession();
+		try {
+			Users u = findUserByUsername(username);
+	        List<Object> sql = ses.createNativeQuery("SELECT psswrd FROM users " +
+	        	"where user_id = " +
+	        	u.getUserId())
+	            .list();
+	           String pass = sql.get(0).toString();
+	           if(pass.equals(password)) {
+	        	   System.out.println("passwords match!");
+	        	   return true;
+	           }
+	           System.out.println("passwords don't match");
+			return false;
+		}catch(Exception e) {
+			e.printStackTrace();
+			return false;
 		}
 	}
 

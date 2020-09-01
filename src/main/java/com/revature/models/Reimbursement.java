@@ -40,10 +40,10 @@ public class Reimbursement implements Serializable {
 	@Column(name="reimb_receipt")
 	private byte[] reimbRecpt;
 	@ManyToOne(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
-	@JoinColumn(name="reimb_author",referencedColumnName="user_id")
+	@JoinColumn(name="reimb_author")
 	private Users author;
 	@ManyToOne(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
-	@JoinColumn(name="reimb_resolver",referencedColumnName="user_id")
+	@JoinColumn(name="reimb_resolver")
 	private Users resolver;
 	@ManyToOne(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
 	@JoinColumn(name="reimb_status_id")

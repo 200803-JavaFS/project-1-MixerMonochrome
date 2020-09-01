@@ -12,56 +12,12 @@
   
   <servlet>
   	<description></description>
-  	<display-name>ApproveDeny</display-name>
-  	<servlet-name>AppDenServlet</servlet-name>
-  	<servlet-class>com.revature.servlets.AppDenServlet</servlet-class>
+  	<display-name>MasterServlet</display-name>
+  	<servlet-name>MasterServlet</servlet-name>
+  	<servlet-class>com.revature.servlets.MasterServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-  	<servlet-name>AppDenServlet</servlet-name>
-  	<url-pattern>/approvedeny</url-pattern>
-  </servlet-mapping>
-  
-  <servlet>
-  	<description></description>
-  	<display-name>Login</display-name>
-  	<servlet-name>LoginServlet</servlet-name>
-  	<servlet-class>com.revature.servlets.LoginServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-  	<servlet-name>LoginServlet</servlet-name>
-  	<url-pattern>/login</url-pattern>
-  </servlet-mapping>
-  
-  <servlet>
-  	<description></description>
-  	<display-name>Request</display-name>
-  	<servlet-name>RequestServlet</servlet-name>
-  	<servlet-class>com.revature.servlets.RequestServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-  	<servlet-name>RequestServlet</servlet-name>
-  	<url-pattern>/request</url-pattern>
-  </servlet-mapping>
-  
-  <servlet>
-  	<description></description>
-  	<display-name>PastTickets</display-name>
-  	<servlet-name>ViewPastTicketsServlet</servlet-name>
-  	<servlet-class>com.revature.servlets.ViewPastTicketsServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-  	<servlet-name>ViewPastTicketsServlet</servlet-name>
-  	<url-pattern>/pasttickets</url-pattern>
-  </servlet-mapping>
-  
-  <servlet>
-  	<description></description>
-  	<display-name>AllRequests</display-name>
-  	<servlet-name>ViewRequestsServlet</servlet-name>
-  	<servlet-class>com.revature.servlets.ViewRequestsServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-  	<servlet-name>ViewRequestsServlet</servlet-name>
-  	<url-pattern>/allrequests</url-pattern>
+  	<servlet-name>MasterServlet</servlet-name>
+  	<url-pattern>/*</url-pattern>
   </servlet-mapping>
 </web-app>
