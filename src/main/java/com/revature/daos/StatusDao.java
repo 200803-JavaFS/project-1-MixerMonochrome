@@ -1,5 +1,6 @@
 package com.revature.daos;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 import com.revature.models.ReimStatus;
 import com.revature.util.HiberUtil;
@@ -15,10 +16,13 @@ public class StatusDao {
 	
 	public boolean insertStatus(ReimStatus s) {
 		Session ses = HiberUtil.getSession();
+		Transaction t = ses.beginTransaction();
 		try {
 			ses.save(s);
+			t.commit();
 			return true;
 		}catch(Exception e) {
+			t.rollback();
 			e.printStackTrace();
 			return false;
 		}finally {
@@ -28,10 +32,13 @@ public class StatusDao {
 	
 	public boolean updateStatus(ReimStatus s) {
 		Session ses = HiberUtil.getSession();
+		Transaction t = ses.beginTransaction();
 		try {
 			ses.update(s);
+			t.commit();
 			return true;
 		}catch(Exception e) {
+			t.rollback();
 			e.printStackTrace();
 			return false;
 		}finally {
@@ -41,10 +48,13 @@ public class StatusDao {
 	
 	public boolean deleteStatus(ReimStatus s) {
 		Session ses = HiberUtil.getSession();
+		Transaction t = ses.beginTransaction();
 		try {
 			ses.delete(s);
+			t.commit();
 			return true;
 		}catch(Exception e) {
+			t.rollback();
 			e.printStackTrace();
 			return false;
 		}finally {
@@ -66,7 +76,7 @@ public class StatusDao {
 	public List<ReimStatus> findAllStatus() {
 		Session ses = HiberUtil.getSession();
 		try {
-			List<ReimStatus> list = ses.createQuery("From ReimStatus").list();
+			List<ReimStatus> list = ses.createQuery("From ReimStatus",ReimStatus.class).list();
 			return list;
 		}catch(Exception e) {
 			e.printStackTrace();

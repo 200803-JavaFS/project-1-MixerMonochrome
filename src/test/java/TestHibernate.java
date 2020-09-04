@@ -1,5 +1,6 @@
 import static org.junit.Assert.assertTrue;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 import org.hibernate.Session;
@@ -25,28 +26,30 @@ public class TestHibernate {
 	StatusDao sDao = new StatusDao();
 	TypeDao tDao = new TypeDao();
 
-//	@Test
-//	public void testConnections() {
-//		List<UserRole> rl = rDao.findAllRoles();
-//		assertTrue(rl != null);
-//		assertTrue(rl.size() == 2);
-//		List<Users> ul = uDao.findAllUsers();
-//		assertTrue(ul != null);
-//		List<Reimbursement> rel = reDao.findAll();
-//		assertTrue(rel != null);
-//		List<ReimStatus> sl = sDao.findAllStatus();
-//		assertTrue(sl != null);
-//		List<ReimType> tl = tDao.findAllTypes();
-//		assertTrue(tl != null);
-//	}
+	@Test
+	public void testConnections() {
+		List<UserRole> rl = rDao.findAllRoles();
+		assertTrue(rl != null);
+		assertTrue(rl.size() == 2);
+		List<Users> ul = uDao.findAllUsers();
+		assertTrue(ul != null);
+		List<Reimbursement> rel = reDao.findAll();
+		assertTrue(rel != null);
+		List<ReimStatus> sl = sDao.findAllStatus();
+		assertTrue(sl != null);
+		List<ReimType> tl = tDao.findAllTypes();
+		assertTrue(tl != null);
+	}
 	
 	@Test
 	public void testInsert() {
-		UserRole r = new UserRole();
-		UserRole r2 = new UserRole();
-		r.setRole("Tester");
-		r2.setRole("Test2");
-		rDao.insertRole(r);
-		rDao.insertRole(r2);
+		Reimbursement re = new Reimbursement();
+		re.setAuthor(uDao.findUserById(1));
+		re.setReimbamount(100);
+		re.setReimbDesc("Gas Money $$");
+		re.setReimbSubbed(new Timestamp(System.currentTimeMillis()));
+		re.setStatus(sDao.getTypeById(1));
+		re.setType(tDao.getTypeById(2));
+		reDao.insertTicket(re);
 	}
 }

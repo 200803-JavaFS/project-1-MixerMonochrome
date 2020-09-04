@@ -36,6 +36,7 @@ public class MasterServlet extends HttpServlet{
 		res.setContentType("application/json");
 		res.setStatus(400);
 		final String URI = req.getRequestURI().replace("/project0/", "");
+		System.out.println(req.getSession().getAttribute("userId"));
 		String[] portions = URI.split("/");
 		System.out.println(Arrays.toString(portions));
 		
@@ -45,7 +46,6 @@ public class MasterServlet extends HttpServlet{
 			res.getWriter().print("Gets to Master Servlet and reads 'test'");
 			break;
 		case "login":
-			System.out.println("Gets to login");
 			lCont.login(req, res);
 			break;
 		case "logout":

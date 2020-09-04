@@ -1,14 +1,13 @@
 package com.revature.daos;
 
 import org.hibernate.Session;
-import org.hibernate.query.NativeQuery;
-import org.hibernate.type.StringType;
 
 import com.revature.models.Users;
 import com.revature.util.HiberUtil;
 
 import java.util.List;
-import java.util.Map;
+
+import org.hibernate.Transaction;
 
 public class UserDao {
 	public UserDao(){
@@ -17,10 +16,13 @@ public class UserDao {
 	
 	public boolean insertUser(Users u) {
 		Session ses = HiberUtil.getSession();
+		Transaction t = ses.beginTransaction();
 		try {
 			ses.save(u);
+			t.commit();
 			return true;
 		}catch(Exception e){
+			t.rollback();
 			e.printStackTrace();
 			return false;
 		}finally {
@@ -30,22 +32,30 @@ public class UserDao {
 	
 	public boolean updateUser(Users u) {
 		Session ses = HiberUtil.getSession();
+		Transaction t = ses.beginTransaction();
 		try {
 			ses.merge(u);
+			t.commit();
 			return true;
 		}catch(Exception e){
+			t.rollback();
+			e.printStackTrace();
 			return false;
-		}finally {
+		}
+		finally {
 			HiberUtil.closeSes();
 		}
 	}
 	
 	public boolean deleteUser(Users u) {
 		Session ses = HiberUtil.getSession();
+		Transaction t = ses.beginTransaction();
 		try {
 			ses.delete(u);
+			t.commit();
 			return true;
 		}catch(Exception e) {
+			t.rollback();
 			e.printStackTrace();
 			return false;
 		}finally {
@@ -90,16 +100,13 @@ public class UserDao {
 		Session ses = HiberUtil.getSession();
 		try {
 			Users u = findUserByUsername(username);
-	        List<String> sql = ses.createNativeQuery("SELECT psswrd FROM users " +
+	        String pass = ses.createNativeQuery("SELECT psswrd FROM users " +
 	        	"where user_id = " +
-	        	u.getUserId(),String.class)
-	            .list();
-	           String pass = sql.get(0).toString();
+	        	u.getUserId())
+	            .getSingleResult().toString();
 	           if(pass.equals(password)) {
-	        	   System.out.println("passwords match!");
 	        	   return true;
 	           }
-	           System.out.println("passwords don't match");
 			return false;
 		}catch(Exception e) {
 			e.printStackTrace();

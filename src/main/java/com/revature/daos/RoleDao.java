@@ -1,5 +1,6 @@
 package com.revature.daos;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 import com.revature.models.UserRole;
 import com.revature.util.HiberUtil;
@@ -13,10 +14,13 @@ public class RoleDao {
 	
 	public boolean insertRole(UserRole r) {
 		Session ses = HiberUtil.getSession();
+		Transaction t = ses.beginTransaction();
 		try {
 			ses.save(r);
+			t.commit();
 			return true;
 		}catch(Exception e) {
+			t.rollback();
 			e.printStackTrace();
 			return false;
 		}
@@ -27,10 +31,13 @@ public class RoleDao {
 	
 	public boolean updateRole(UserRole r) {
 		Session ses = HiberUtil.getSession();
+		Transaction t = ses.beginTransaction();
 		try {
 			ses.merge(r);
+			t.commit();
 			return true;
 		}catch(Exception e) {
+			t.rollback();
 			e.printStackTrace();
 			return false;
 		}
@@ -41,10 +48,13 @@ public class RoleDao {
 	
 	public boolean deleteRole(UserRole r) {
 		Session ses = HiberUtil.getSession();
+		Transaction t = ses.beginTransaction();
 		try {
 			ses.delete(r);
+			t.commit();
 			return true;
 		}catch(Exception e) {
+			t.rollback();
 			e.printStackTrace();
 			return false;
 		}

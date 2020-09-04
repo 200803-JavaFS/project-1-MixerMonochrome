@@ -7,6 +7,8 @@ import com.revature.util.HiberUtil;
 
 import java.util.List;
 
+import org.hibernate.Transaction;
+
 
 public class ReimDao {
 	public ReimDao(){
@@ -15,10 +17,13 @@ public class ReimDao {
 	
 	public boolean insertTicket(Reimbursement tick) {
 		Session ses = HiberUtil.getSession();
+		Transaction t = ses.beginTransaction();
 		try {
 			ses.save(tick);
+			t.commit();
 			return true;
 		}catch(Exception e){
+			t.rollback();
 			e.printStackTrace();
 			return false;
 		}
@@ -30,10 +35,13 @@ public class ReimDao {
 	
 	public boolean updateTicket(Reimbursement tick) {
 		Session ses = HiberUtil.getSession();
+		Transaction t = ses.beginTransaction();
 		try {
 			ses.merge(tick);
+			t.commit();
 			return true;
 		}catch(Exception e){
+			t.rollback();
 			e.printStackTrace();
 			return false;
 		}finally {
@@ -43,10 +51,13 @@ public class ReimDao {
 	
 	public boolean deleteTicket(Reimbursement tick) {
 		Session ses = HiberUtil.getSession();
+		Transaction t = ses.beginTransaction();
 		try {
 			ses.delete(tick);
+			t.commit();
 			return true;
 		}catch(Exception e){
+			t.rollback();
 			e.printStackTrace();
 			return false;
 		}finally {
@@ -67,7 +78,7 @@ public class ReimDao {
 	
 	public List<Reimbursement> findAll(){
 		Session ses = HiberUtil.getSession();
-		List<Reimbursement> tickets = ses.createQuery("from reimbursement").list();
+		List<Reimbursement> tickets = ses.createQuery("from reimbursement",Reimbursement.class).list();
 		return tickets;
 	}
 }

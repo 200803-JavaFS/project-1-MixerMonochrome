@@ -5,6 +5,7 @@ import java.io.IOException;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.revature.java.service.AppDenServices;
@@ -32,8 +33,9 @@ public class AppDenCont {
 		String body = new String(sb);
 		
 		AccStatDTO a = om.readValue(body, AccStatDTO.class);
-		
-		if(ads.changeStatus(a)) {
+		HttpSession ses = req.getSession();
+		Integer uid = (Integer)ses.getAttribute("userId");
+		if(ads.changeStatus(a, uid.intValue())) {
 			res.setStatus(200);
 			res.getWriter().println("Change Successful");
 		}
