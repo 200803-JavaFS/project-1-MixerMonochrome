@@ -16,7 +16,7 @@ public class AppDenServices {
 	
 	public boolean changeStatus(AccStatDTO a, int uId) {
 		Reimbursement r = redao.findById(a.aId);
-		ReimStatus s = sdao.getTypeById(a.sId);
+		ReimStatus s = sdao.getStatusById(a.sId);
 		r.setStatus(s);
 		r.setResolver(udao.findUserById(uId));
 		r.setReimbReslvd(new Timestamp(System.currentTimeMillis()));

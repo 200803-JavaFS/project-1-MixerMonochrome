@@ -62,15 +62,10 @@ public class StatusDao {
 		}
 	}
 	
-	public ReimStatus getTypeById(int id) {
+	public ReimStatus getStatusById(int id) {
 		Session ses = HiberUtil.getSession();
-		try {
 			ReimStatus s = ses.get(ReimStatus.class, id);
 			return s;
-		}catch(Exception e) {
-			e.printStackTrace();
-			return null;
-		}
 	}
 	
 	public List<ReimStatus> findAllStatus() {

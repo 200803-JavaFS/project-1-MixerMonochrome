@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.revature.java.controllers.AppDenCont;
 import com.revature.java.controllers.LoginCont;
@@ -42,6 +43,7 @@ public class MasterServlet extends HttpServlet{
 		
 		switch(portions[0]) {
 		case "test":
+			System.out.println(req.getSession());
 			res.setStatus(200);
 			res.getWriter().print("Gets to Master Servlet and reads 'test'");
 			break;
@@ -49,7 +51,14 @@ public class MasterServlet extends HttpServlet{
 			lCont.login(req, res);
 			break;
 		case "logout":
-			lCont.logout(req, res);
+			HttpSession ses = req.getSession();
+			if ((boolean)ses.getAttribute("loggedin") == true) {
+				lCont.logout(req, res);
+			}
+			else {
+				res.setStatus(401);
+				res.getWriter().print("Must be logged in to logout");
+			}
 			break;
 		case "appden":
 			adCont.changeStatus(req,res);

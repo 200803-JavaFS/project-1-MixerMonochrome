@@ -36,10 +36,10 @@ public class Users implements Serializable{
 	private String lastName;
 	@Column(name="user_email")
 	private String email;
-	@ManyToOne(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
+	@ManyToOne(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
 	@JoinColumn(name="user_role_id")
 	private UserRole userRole;
-	@OneToMany(mappedBy="author",fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="author",fetch=FetchType.LAZY)
 	private List<Reimbursement> reimbursements;
 	
 	public Users() {
@@ -172,8 +172,9 @@ public class Users implements Serializable{
 	@Override
 	public String toString() {
 		return "Users [userId=" + userId + ", username=" + username + ", firstName=" + firstName + ", lastName="
-				+ lastName + ", email=" + email + ", userRole=" + userRole + ", reimbursements=" + reimbursements + "]";
+				+ lastName + ", email=" + email + ", userRole=" + userRole + "]";
 	}
+	
 
 	
 

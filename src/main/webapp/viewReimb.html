@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ReimburseMe:ManagersEdition</title>
+		<link href="stylish.css" type="text/css" rel="stylesheet">
+		<meta name="viewport" content="width-device-width, initial-scale=1.0">
+	</head>
+	<body onload = "getReims('viewAll')">
+		<h1 class = "banner">ReimburseMe</h1>
+		<h2>Costs accrued on the job? We've got your money back.</h2>
+		
+		<div id = "allReimHere"></div>
+		<form>
+		<label class = "container">
+          <input type="checkbox" name = "stati[]" value = "pending" checked>
+          Pending
+        </label>		
+        <label class = "container">
+          <input type="checkbox" name = "stati[]" value = "approved" checked>
+          Approved
+        </label>
+        <label class = "container">
+          <input type="checkbox" name = "stati[]" value = "denied" checked>
+          Denied
+        </label>
+		</form>
+		<button type = "button" onclick = "filterReims()">Filter</button>
+	</body>
+	<!--ADD BUTTON FOR LOGOUT AND FORM FOR APPROVE/DENY. AUTO-REFRESH-->
+	<script src = "reimburseMe.js"></script>
+</html>

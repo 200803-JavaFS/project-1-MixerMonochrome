@@ -48,7 +48,7 @@ public class TestHibernate {
 		re.setReimbamount(100);
 		re.setReimbDesc("Gas Money $$");
 		re.setReimbSubbed(new Timestamp(System.currentTimeMillis()));
-		re.setStatus(sDao.getTypeById(1));
+		re.setStatus(sDao.getStatusById(1));
 		re.setType(tDao.getTypeById(2));
 		reDao.insertTicket(re);
 	}

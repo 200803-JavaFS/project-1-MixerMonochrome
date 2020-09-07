@@ -65,13 +65,8 @@ public class UserDao {
 	
 	public Users findUserById(int id) {
 		Session ses = HiberUtil.getSession();
-		try {
 			Users u = ses.get(Users.class,id);
 			return u;
-		}catch(Exception e) {
-			e.printStackTrace();
-			return null;
-		}
 	}
 	
 	public Users findUserByUsername(String username) {

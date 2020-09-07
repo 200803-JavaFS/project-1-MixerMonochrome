@@ -67,18 +67,13 @@ public class ReimDao {
 	
 	public Reimbursement findById(int id) {
 		Session ses = HiberUtil.getSession();
-		try {
-			Reimbursement ticket = ses.get(Reimbursement.class, id);
-			return ticket;
-		}catch(Exception e) {
-			e.printStackTrace();
-			return null;
-		}
+		Reimbursement ticket = ses.get(Reimbursement.class, id);
+		return ticket;
 	}
 	
 	public List<Reimbursement> findAll(){
 		Session ses = HiberUtil.getSession();
-		List<Reimbursement> tickets = ses.createQuery("from reimbursement",Reimbursement.class).list();
+		List<Reimbursement> tickets = ses.createQuery("from Reimbursement").list();
 		return tickets;
 	}
 }

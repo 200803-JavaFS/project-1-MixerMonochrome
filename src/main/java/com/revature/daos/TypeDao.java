@@ -63,13 +63,8 @@ public class TypeDao {
 	
 	public ReimType getTypeById(int id) {
 		Session ses = HiberUtil.getSession();
-		try {
 			ReimType t = ses.get(ReimType.class, id);
 			return t;
-		}catch(Exception e) {
-			e.printStackTrace();
-			return null;
-		}
 	}
 	
 	public List<ReimType> findAllTypes() {

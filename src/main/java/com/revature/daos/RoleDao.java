@@ -65,13 +65,8 @@ public class RoleDao {
 	
 	public UserRole getRoleById(int i) {
 		Session ses = HiberUtil.getSession();
-		try {
 			UserRole r = ses.get(UserRole.class, i);
 			return r;
-		}catch(Exception e) {
-			e.printStackTrace();
-			return null;
-		}
 	}
 	
 	public List<UserRole> findAllRoles(){
