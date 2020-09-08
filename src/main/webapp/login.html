@@ -7,20 +7,19 @@
 	</head>
 	
 	<body>
-		<h1 class="banner">ReimburseMe</h1>
-		<h3>Login</h3>
-			<table>
-			<tr>
-				<td><input type="text" id="username" name="username" placeholder="Enter Username"></td>
-			</tr>
-			<tr>
-				<td><input type="password" id="password" name="password" placeholder="Enter Password"></td>
-			</tr>
-			<tr>
-				<td><input type="Submit" id="loginbtn" name="login" onclick="loginFunc()"></td>
-			</tr>
-		</table>
-		<p id="login-row"></p>
+		
+		<h1 class = "banner">ReimburseMe</h1>
+		<h2>Costs accrued on the job? We've got your money back.</h2>
+		<h2>Login</h2>
+			<div class = "container">
+				<div class = "logintd"><input type="text" id="username" name="username" placeholder="Enter Username"></div>
+
+				<div class = "logintd"><input type="password" id="password" name="password" placeholder="Enter Password"><div>
+
+				<div><button type="button" id="submit" name="submit" onclick="loginFunc()">Submit</button></div>
+			</div>
+			<br><br><br>
+		<p id="login-row" class = "cent"></p>
 	</body>
 	
 	<script src="reimburseMe.js"></script>

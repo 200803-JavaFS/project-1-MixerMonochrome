@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html>
     <head>
-    <title>ReimburseMe:ManagersEdition</title>
-    <link href="stylish.css" type="text/css" rel="stylesheet">
-    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+        <title>ReimburseMe:ManagersEdition</title>
+        <link href="stylish.css" type="text/css" rel="stylesheet">
+         <meta name="viewport" content="width-device-width, initial-scale=1.0">
     </head>
     <body onload="getReims('viewPast')">
-        <div id = "allReimHere"></div>
+        
+		<h1 class = "banner">ReimburseMe</h1>
+		<h2>Costs accrued on the job? We've got your money back.</h2>
+        <div id = "allReimHere" class = "container"></div>
     </body>
-    <div id = "submissionArea">
-        <input type = "number" id = "reimbAmnt">Amount</input>
-        <input type = "text" id = "reimbDesc">Description</input>
-        <input type = "image" id = "reimbRecpt">Receipt</input>
+    <br>
+    <div id = "submissionArea" class = "container">
+        <input type = "number" id = "reimbAmnt" min = "1">Amount</input>
+        <label>
+        <textarea id = "reimbDesc"></textarea>Description
+        </label>
+        <!--<input type = "image" id = "reimbRecpt">Receipt</input>-->
         <select id ="typeId">
             <option value = 1>Lodging</option>
             <option value = 2>Travel</option>
@@ -21,7 +27,7 @@
     </div>
     <button type = "button" onclick = "submitNew()">New Ticket</button>
     <button type = "button" onclick = "logout()">Logout</button>
-    <div id = "appStatus"></div>
+    <div id = "appStatus" class = "cent"></div>
     <!--ADD BUTTON FOR LOGOUT AND FORM FOR SUBMIT TICKET. AUTOREFRESH WHEN SEND TICKET-->
     <script src = "reimburseMe.js"></script>
 </html>

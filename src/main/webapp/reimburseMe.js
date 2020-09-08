@@ -169,7 +169,7 @@ async function submitNew(){
         body : JSON.stringify({
             reimbAmnt : document.getElementById("reimbAmnt").value,
             reimbDesc : document.getElementById("reimbDesc").value,
-            reimbRecpt : document.getElementById("reimbRecpt").value,
+            //reimbRecpt : document.getElementById("reimbRecpt").value,
             typeId : document.getElementById("typeId").value
         }),
         credentials : 'include'

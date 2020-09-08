@@ -18,3 +18,188 @@
 2020-09-08 01:46:55 INFO  AppDenServices:23 - Enters changeStatus method in AppDenServices
 2020-09-08 01:46:55 INFO  AppDenServices:25 - Reimbursement [reimbId=17, reimbamount=100, reimbSubbed=2020-09-08 01:46:54.664, reimbReslvd=2020-09-08 01:46:55.159, reimbDesc=TESTER, reimbRecpt=null, author=Users [userId=1, username=dummy, firstName=Bob, lastName=Builder, email=bobthebuilder@canwe.fixit, userRole=UserRole [roleId=1, role=Employee]], resolver=Users [userId=2, username=Groot, firstName=Groot, lastName=Groot, email=groot@grootgroot.groot, userRole=UserRole [roleId=2, role=Finance Manager]], status=ReimStatus [statusId=2, status=APPROVED], type=ReimType [typeId=1, type=LODGING]] Grabbed from database
 2020-09-08 01:46:55 INFO  AppDenServices:37 - Status APPROVED, cancel update
+2020-09-08 12:47:17 INFO  MasterServlet:41 - Enters Master Servlet
+2020-09-08 12:47:17 INFO  MasterServlet:47 - []
+2020-09-08 12:47:32 INFO  MasterServlet:41 - Enters Master Servlet
+2020-09-08 12:47:32 INFO  MasterServlet:47 - [login]
+2020-09-08 12:47:32 INFO  MasterServlet:57 - Enters login case of master servlet
+2020-09-08 12:47:40 INFO  MasterServlet:41 - Enters Master Servlet
+2020-09-08 12:47:40 INFO  MasterServlet:47 - [viewPast]
+2020-09-08 12:47:40 INFO  MasterServlet:80 - Enters viewPast case of Master Servlet
+2020-09-08 12:57:45 INFO  MasterServlet:41 - Enters Master Servlet
+2020-09-08 12:57:45 INFO  MasterServlet:47 - [viewPast]
+2020-09-08 12:57:45 INFO  MasterServlet:80 - Enters viewPast case of Master Servlet
+2020-09-08 13:01:18 INFO  MasterServlet:41 - Enters Master Servlet
+2020-09-08 13:01:18 INFO  MasterServlet:47 - [viewPast]
+2020-09-08 13:01:18 INFO  MasterServlet:80 - Enters viewPast case of Master Servlet
+2020-09-08 13:02:34 INFO  MasterServlet:41 - Enters Master Servlet
+2020-09-08 13:02:34 INFO  MasterServlet:47 - [viewPast]
+2020-09-08 13:02:34 INFO  MasterServlet:80 - Enters viewPast case of Master Servlet
+2020-09-08 13:02:56 INFO  MasterServlet:41 - Enters Master Servlet
+2020-09-08 13:02:56 INFO  MasterServlet:47 - [viewPast]
+2020-09-08 13:02:56 INFO  MasterServlet:80 - Enters viewPast case of Master Servlet
+2020-09-08 13:03:30 INFO  MasterServlet:41 - Enters Master Servlet
+2020-09-08 13:03:30 INFO  MasterServlet:47 - [viewPast]
+2020-09-08 13:03:30 INFO  MasterServlet:80 - Enters viewPast case of Master Servlet
+2020-09-08 13:04:37 INFO  MasterServlet:41 - Enters Master Servlet
+2020-09-08 13:04:37 INFO  MasterServlet:47 - [viewPast]
+2020-09-08 13:04:37 INFO  MasterServlet:80 - Enters viewPast case of Master Servlet
+2020-09-08 13:06:39 INFO  MasterServlet:41 - Enters Master Servlet
+2020-09-08 13:06:39 INFO  MasterServlet:47 - [viewPast]
+2020-09-08 13:06:39 INFO  MasterServlet:80 - Enters viewPast case of Master Servlet
+2020-09-08 13:07:58 INFO  MasterServlet:41 - Enters Master Servlet
+2020-09-08 13:07:58 INFO  MasterServlet:47 - [viewPast]
+2020-09-08 13:07:58 INFO  MasterServlet:80 - Enters viewPast case of Master Servlet
+2020-09-08 13:08:43 INFO  MasterServlet:41 - Enters Master Servlet
+2020-09-08 13:08:43 INFO  MasterServlet:47 - [viewPast]
+2020-09-08 13:08:43 INFO  MasterServlet:80 - Enters viewPast case of Master Servlet
+2020-09-08 13:09:27 INFO  MasterServlet:41 - Enters Master Servlet
+2020-09-08 13:09:27 INFO  MasterServlet:47 - [viewPast]
+2020-09-08 13:09:27 INFO  MasterServlet:80 - Enters viewPast case of Master Servlet
+2020-09-08 13:10:00 INFO  MasterServlet:41 - Enters Master Servlet
+2020-09-08 13:10:00 INFO  MasterServlet:47 - [logout]
+2020-09-08 13:10:00 INFO  MasterServlet:61 - Enters logout case of master servlet
+2020-09-08 13:10:09 INFO  MasterServlet:41 - Enters Master Servlet
+2020-09-08 13:10:09 INFO  MasterServlet:47 - [login]
+2020-09-08 13:10:09 INFO  MasterServlet:57 - Enters login case of master servlet
+2020-09-08 13:10:09 INFO  MasterServlet:41 - Enters Master Servlet
+2020-09-08 13:10:09 INFO  MasterServlet:47 - [viewAll]
+2020-09-08 13:10:09 INFO  MasterServlet:90 - Enters viewAll case of Master Servlet
+2020-09-08 13:10:25 INFO  MasterServlet:41 - Enters Master Servlet
+2020-09-08 13:10:25 INFO  MasterServlet:47 - [appden]
+2020-09-08 13:10:25 INFO  MasterServlet:72 - Enters appden case of Master Servlet
+2020-09-08 13:10:25 INFO  AppDenCont:26 - Enters changeStatus method in AppDenCont
+2020-09-08 13:10:25 INFO  AppDenCont:41 - Mapped json to AccStatDTO : com.revature.models.AccStatDTO@7b0ca740
+2020-09-08 13:10:25 INFO  AppDenServices:23 - Enters changeStatus method in AppDenServices
+2020-09-08 13:10:25 INFO  AppDenServices:25 - null Grabbed from database
+2020-09-08 13:12:02 INFO  MasterServlet:41 - Enters Master Servlet
+2020-09-08 13:12:02 INFO  MasterServlet:47 - [viewAll]
+2020-09-08 13:12:02 INFO  MasterServlet:90 - Enters viewAll case of Master Servlet
+2020-09-08 13:12:06 INFO  MasterServlet:41 - Enters Master Servlet
+2020-09-08 13:12:06 INFO  MasterServlet:47 - [appden]
+2020-09-08 13:12:06 INFO  MasterServlet:72 - Enters appden case of Master Servlet
+2020-09-08 13:12:06 INFO  AppDenCont:26 - Enters changeStatus method in AppDenCont
+2020-09-08 13:12:06 INFO  AppDenCont:41 - Mapped json to AccStatDTO : com.revature.models.AccStatDTO@281a703c
+2020-09-08 13:12:06 INFO  AppDenServices:23 - Enters changeStatus method in AppDenServices
+2020-09-08 13:12:06 INFO  AppDenServices:25 - null Grabbed from database
+2020-09-08 13:12:21 INFO  MasterServlet:41 - Enters Master Servlet
+2020-09-08 13:12:21 INFO  MasterServlet:47 - [viewAll]
+2020-09-08 13:12:21 INFO  MasterServlet:90 - Enters viewAll case of Master Servlet
+2020-09-08 13:12:24 INFO  MasterServlet:41 - Enters Master Servlet
+2020-09-08 13:12:24 INFO  MasterServlet:47 - [appden]
+2020-09-08 13:12:24 INFO  MasterServlet:72 - Enters appden case of Master Servlet
+2020-09-08 13:12:24 INFO  AppDenCont:26 - Enters changeStatus method in AppDenCont
+2020-09-08 13:12:24 INFO  AppDenCont:41 - Mapped json to AccStatDTO : com.revature.models.AccStatDTO@62e1dac8
+2020-09-08 13:12:24 INFO  AppDenServices:23 - Enters changeStatus method in AppDenServices
+2020-09-08 13:12:24 INFO  AppDenServices:25 - Reimbursement [reimbId=1, reimbamount=100, reimbSubbed=2020-09-06 16:00:11.125976, reimbReslvd=2020-09-07 23:20:57.667, reimbDesc=First Dummy Description, reimbRecpt=null, author=Users [userId=1, username=dummy, firstName=Bob, lastName=Builder, email=bobthebuilder@canwe.fixit, userRole=UserRole [roleId=1, role=Employee]], resolver=Users [userId=2, username=Groot, firstName=Groot, lastName=Groot, email=groot@grootgroot.groot, userRole=UserRole [roleId=2, role=Finance Manager]], status=ReimStatus [statusId=3, status=DENIED], type=ReimType [typeId=1, type=LODGING]] Grabbed from database
+2020-09-08 13:12:24 INFO  AppDenServices:37 - Status DENIED, cancel update
+2020-09-08 13:12:24 INFO  AppDenCont:50 - Account : 1 not changed, status was not Pending
+2020-09-08 13:12:24 INFO  AppDenCont:54 - Exiting AppDenCont
+2020-09-08 13:14:12 INFO  MasterServlet:41 - Enters Master Servlet
+2020-09-08 13:14:12 INFO  MasterServlet:47 - [viewAll]
+2020-09-08 13:14:12 INFO  MasterServlet:90 - Enters viewAll case of Master Servlet
+2020-09-08 13:14:28 INFO  MasterServlet:41 - Enters Master Servlet
+2020-09-08 13:14:28 INFO  MasterServlet:47 - [viewAll]
+2020-09-08 13:14:28 INFO  MasterServlet:90 - Enters viewAll case of Master Servlet
+2020-09-08 13:14:38 INFO  MasterServlet:41 - Enters Master Servlet
+2020-09-08 13:14:38 INFO  MasterServlet:47 - [viewAll]
+2020-09-08 13:14:38 INFO  MasterServlet:90 - Enters viewAll case of Master Servlet
+2020-09-08 13:15:27 INFO  MasterServlet:41 - Enters Master Servlet
+2020-09-08 13:15:27 INFO  MasterServlet:47 - [viewAll]
+2020-09-08 13:15:27 INFO  MasterServlet:90 - Enters viewAll case of Master Servlet
+2020-09-08 13:15:51 INFO  MasterServlet:41 - Enters Master Servlet
+2020-09-08 13:15:51 INFO  MasterServlet:47 - [viewAll]
+2020-09-08 13:15:51 INFO  MasterServlet:90 - Enters viewAll case of Master Servlet
+2020-09-08 13:25:19 INFO  MasterServlet:41 - Enters Master Servlet
+2020-09-08 13:25:19 INFO  MasterServlet:47 - [viewAll]
+2020-09-08 13:25:19 INFO  MasterServlet:90 - Enters viewAll case of Master Servlet
+2020-09-08 13:26:10 INFO  MasterServlet:41 - Enters Master Servlet
+2020-09-08 13:26:10 INFO  MasterServlet:47 - [login]
+2020-09-08 13:26:10 INFO  MasterServlet:57 - Enters login case of master servlet
+2020-09-08 13:26:17 INFO  MasterServlet:41 - Enters Master Servlet
+2020-09-08 13:26:17 INFO  MasterServlet:47 - [viewAll]
+2020-09-08 13:26:17 INFO  MasterServlet:90 - Enters viewAll case of Master Servlet
+2020-09-08 13:27:19 INFO  MasterServlet:41 - Enters Master Servlet
+2020-09-08 13:27:19 INFO  MasterServlet:47 - [viewAll]
+2020-09-08 13:27:19 INFO  MasterServlet:90 - Enters viewAll case of Master Servlet
+2020-09-08 13:27:54 INFO  MasterServlet:41 - Enters Master Servlet
+2020-09-08 13:27:54 INFO  MasterServlet:47 - [viewAll]
+2020-09-08 13:27:54 INFO  MasterServlet:90 - Enters viewAll case of Master Servlet
+2020-09-08 13:28:36 INFO  MasterServlet:41 - Enters Master Servlet
+2020-09-08 13:28:36 INFO  MasterServlet:47 - [viewAll]
+2020-09-08 13:28:36 INFO  MasterServlet:90 - Enters viewAll case of Master Servlet
+2020-09-08 13:29:56 INFO  MasterServlet:41 - Enters Master Servlet
+2020-09-08 13:29:56 INFO  MasterServlet:47 - [viewAll]
+2020-09-08 13:29:56 INFO  MasterServlet:90 - Enters viewAll case of Master Servlet
+2020-09-08 13:30:35 INFO  MasterServlet:41 - Enters Master Servlet
+2020-09-08 13:30:35 INFO  MasterServlet:47 - [viewAll]
+2020-09-08 13:30:35 INFO  MasterServlet:90 - Enters viewAll case of Master Servlet
+2020-09-08 13:32:05 INFO  MasterServlet:41 - Enters Master Servlet
+2020-09-08 13:32:05 INFO  MasterServlet:47 - [viewAll]
+2020-09-08 13:32:05 INFO  MasterServlet:90 - Enters viewAll case of Master Servlet
+2020-09-08 13:32:20 INFO  MasterServlet:41 - Enters Master Servlet
+2020-09-08 13:32:20 INFO  MasterServlet:47 - [viewAll]
+2020-09-08 13:32:20 INFO  MasterServlet:90 - Enters viewAll case of Master Servlet
+2020-09-08 13:32:51 INFO  MasterServlet:41 - Enters Master Servlet
+2020-09-08 13:32:51 INFO  MasterServlet:47 - [viewAll]
+2020-09-08 13:32:51 INFO  MasterServlet:90 - Enters viewAll case of Master Servlet
+2020-09-08 13:33:48 INFO  MasterServlet:41 - Enters Master Servlet
+2020-09-08 13:33:48 INFO  MasterServlet:47 - [viewAll]
+2020-09-08 13:33:48 INFO  MasterServlet:90 - Enters viewAll case of Master Servlet
+2020-09-08 13:34:52 INFO  MasterServlet:41 - Enters Master Servlet
+2020-09-08 13:34:52 INFO  MasterServlet:47 - [viewAll]
+2020-09-08 13:34:52 INFO  MasterServlet:90 - Enters viewAll case of Master Servlet
+2020-09-08 13:35:28 INFO  MasterServlet:41 - Enters Master Servlet
+2020-09-08 13:35:28 INFO  MasterServlet:47 - [logout]
+2020-09-08 13:35:28 INFO  MasterServlet:61 - Enters logout case of master servlet
+2020-09-08 13:35:55 INFO  MasterServlet:41 - Enters Master Servlet
+2020-09-08 13:35:55 INFO  MasterServlet:47 - [login]
+2020-09-08 13:35:55 INFO  MasterServlet:57 - Enters login case of master servlet
+2020-09-08 13:35:55 INFO  MasterServlet:41 - Enters Master Servlet
+2020-09-08 13:35:55 INFO  MasterServlet:47 - [viewPast]
+2020-09-08 13:35:55 INFO  MasterServlet:80 - Enters viewPast case of Master Servlet
+2020-09-08 13:36:58 INFO  MasterServlet:41 - Enters Master Servlet
+2020-09-08 13:36:58 INFO  MasterServlet:47 - [viewPast]
+2020-09-08 13:36:58 INFO  MasterServlet:80 - Enters viewPast case of Master Servlet
+2020-09-08 13:38:28 INFO  MasterServlet:41 - Enters Master Servlet
+2020-09-08 13:38:28 INFO  MasterServlet:47 - [viewPast]
+2020-09-08 13:38:28 INFO  MasterServlet:80 - Enters viewPast case of Master Servlet
+2020-09-08 13:38:54 INFO  MasterServlet:41 - Enters Master Servlet
+2020-09-08 13:38:54 INFO  MasterServlet:47 - [viewPast]
+2020-09-08 13:38:54 INFO  MasterServlet:80 - Enters viewPast case of Master Servlet
+2020-09-08 13:39:10 INFO  MasterServlet:41 - Enters Master Servlet
+2020-09-08 13:39:10 INFO  MasterServlet:47 - [viewPast]
+2020-09-08 13:39:10 INFO  MasterServlet:80 - Enters viewPast case of Master Servlet
+2020-09-08 13:39:38 INFO  MasterServlet:41 - Enters Master Servlet
+2020-09-08 13:39:38 INFO  MasterServlet:47 - [viewPast]
+2020-09-08 13:39:38 INFO  MasterServlet:80 - Enters viewPast case of Master Servlet
+2020-09-08 13:41:48 INFO  MasterServlet:41 - Enters Master Servlet
+2020-09-08 13:41:48 INFO  MasterServlet:47 - [viewPast]
+2020-09-08 13:41:48 INFO  MasterServlet:80 - Enters viewPast case of Master Servlet
+2020-09-08 13:42:57 INFO  MasterServlet:41 - Enters Master Servlet
+2020-09-08 13:42:57 INFO  MasterServlet:47 - [viewPast]
+2020-09-08 13:42:57 INFO  MasterServlet:80 - Enters viewPast case of Master Servlet
+2020-09-08 13:43:31 INFO  MasterServlet:41 - Enters Master Servlet
+2020-09-08 13:43:31 INFO  MasterServlet:47 - [viewPast]
+2020-09-08 13:43:31 INFO  MasterServlet:80 - Enters viewPast case of Master Servlet
+2020-09-08 13:45:54 INFO  MasterServlet:41 - Enters Master Servlet
+2020-09-08 13:45:54 INFO  MasterServlet:47 - [viewPast]
+2020-09-08 13:45:54 INFO  MasterServlet:80 - Enters viewPast case of Master Servlet
+2020-09-08 13:46:05 INFO  MasterServlet:41 - Enters Master Servlet
+2020-09-08 13:46:05 INFO  MasterServlet:47 - [request]
+2020-09-08 13:46:05 INFO  MasterServlet:76 - Enters request case of Master Servlet
+2020-09-08 13:46:05 INFO  MasterServlet:41 - Enters Master Servlet
+2020-09-08 13:46:05 INFO  MasterServlet:47 - [viewPast]
+2020-09-08 13:46:05 INFO  MasterServlet:80 - Enters viewPast case of Master Servlet
+2020-09-08 13:47:48 INFO  MasterServlet:41 - Enters Master Servlet
+2020-09-08 13:47:48 INFO  MasterServlet:47 - [viewPast]
+2020-09-08 13:47:48 INFO  MasterServlet:80 - Enters viewPast case of Master Servlet
+2020-09-08 13:48:08 INFO  MasterServlet:41 - Enters Master Servlet
+2020-09-08 13:48:08 INFO  MasterServlet:47 - [request]
+2020-09-08 13:48:08 INFO  MasterServlet:76 - Enters request case of Master Servlet
+2020-09-08 13:48:08 INFO  MasterServlet:41 - Enters Master Servlet
+2020-09-08 13:48:08 INFO  MasterServlet:47 - [viewPast]
+2020-09-08 13:48:08 INFO  MasterServlet:80 - Enters viewPast case of Master Servlet
+2020-09-08 13:49:59 INFO  MasterServlet:41 - Enters Master Servlet
+2020-09-08 13:49:59 INFO  MasterServlet:47 - [viewPast]
+2020-09-08 13:49:59 INFO  MasterServlet:80 - Enters viewPast case of Master Servlet
