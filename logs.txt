@@ -1,0 +1,20 @@
+2020-09-08 01:30:14 INFO  AppDenServices:23 - Enters changeStatus method in AppDenServices
+2020-09-08 01:30:14 INFO  AppDenServices:25 - null Grabbed from database
+2020-09-08 01:42:32 INFO  AppDenServices:23 - Enters changeStatus method in AppDenServices
+2020-09-08 01:42:32 INFO  AppDenServices:25 - null Grabbed from database
+2020-09-08 01:46:15 INFO  AppDenServices:23 - Enters changeStatus method in AppDenServices
+2020-09-08 01:46:15 INFO  AppDenServices:25 - Reimbursement [reimbId=14, reimbamount=100, reimbSubbed=2020-09-08 01:46:15.435, reimbReslvd=null, reimbDesc=TESTER, reimbRecpt=null, author=Users [userId=1, username=dummy, firstName=Bob, lastName=Builder, email=bobthebuilder@canwe.fixit, userRole=UserRole [roleId=1, role=Employee]], resolver=null, status=ReimStatus [statusId=1, status=PENDING], type=ReimType [typeId=1, type=LODGING]] Grabbed from database
+2020-09-08 01:46:15 INFO  AppDenServices:27 - Status Pending, move forward with update
+2020-09-08 01:46:15 INFO  AppDenServices:32 - Updating Ticket...
+2020-09-08 01:46:16 INFO  AppDenServices:34 - Ticket updated
+2020-09-08 01:46:16 INFO  AppDenServices:23 - Enters changeStatus method in AppDenServices
+2020-09-08 01:46:16 INFO  AppDenServices:25 - Reimbursement [reimbId=14, reimbamount=100, reimbSubbed=2020-09-08 01:46:15.435, reimbReslvd=2020-09-08 01:46:15.929, reimbDesc=TESTER, reimbRecpt=null, author=Users [userId=1, username=dummy, firstName=Bob, lastName=Builder, email=bobthebuilder@canwe.fixit, userRole=UserRole [roleId=1, role=Employee]], resolver=Users [userId=2, username=Groot, firstName=Groot, lastName=Groot, email=groot@grootgroot.groot, userRole=UserRole [roleId=2, role=Finance Manager]], status=ReimStatus [statusId=2, status=APPROVED], type=ReimType [typeId=1, type=LODGING]] Grabbed from database
+2020-09-08 01:46:16 INFO  AppDenServices:37 - Status APPROVED, cancel update
+2020-09-08 01:46:54 INFO  AppDenServices:23 - Enters changeStatus method in AppDenServices
+2020-09-08 01:46:54 INFO  AppDenServices:25 - Reimbursement [reimbId=17, reimbamount=100, reimbSubbed=2020-09-08 01:46:54.664, reimbReslvd=null, reimbDesc=TESTER, reimbRecpt=null, author=Users [userId=1, username=dummy, firstName=Bob, lastName=Builder, email=bobthebuilder@canwe.fixit, userRole=UserRole [roleId=1, role=Employee]], resolver=null, status=ReimStatus [statusId=1, status=PENDING], type=ReimType [typeId=1, type=LODGING]] Grabbed from database
+2020-09-08 01:46:54 INFO  AppDenServices:27 - Status Pending, move forward with update
+2020-09-08 01:46:55 INFO  AppDenServices:32 - Updating Ticket...
+2020-09-08 01:46:55 INFO  AppDenServices:34 - Ticket updated
+2020-09-08 01:46:55 INFO  AppDenServices:23 - Enters changeStatus method in AppDenServices
+2020-09-08 01:46:55 INFO  AppDenServices:25 - Reimbursement [reimbId=17, reimbamount=100, reimbSubbed=2020-09-08 01:46:54.664, reimbReslvd=2020-09-08 01:46:55.159, reimbDesc=TESTER, reimbRecpt=null, author=Users [userId=1, username=dummy, firstName=Bob, lastName=Builder, email=bobthebuilder@canwe.fixit, userRole=UserRole [roleId=1, role=Employee]], resolver=Users [userId=2, username=Groot, firstName=Groot, lastName=Groot, email=groot@grootgroot.groot, userRole=UserRole [roleId=2, role=Finance Manager]], status=ReimStatus [statusId=2, status=APPROVED], type=ReimType [typeId=1, type=LODGING]] Grabbed from database
+2020-09-08 01:46:55 INFO  AppDenServices:37 - Status APPROVED, cancel update

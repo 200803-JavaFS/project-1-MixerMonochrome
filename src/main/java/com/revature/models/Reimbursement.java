@@ -39,16 +39,16 @@ public class Reimbursement implements Serializable {
 	private String reimbDesc;
 	@Column(name="reimb_receipt")
 	private byte[] reimbRecpt;
-	@ManyToOne(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
+	@ManyToOne(fetch=FetchType.LAZY, cascade= {CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
 	@JoinColumn(name="reimb_author")
 	private Users author;
-	@ManyToOne(optional = true, fetch=FetchType.LAZY, cascade=CascadeType.ALL)
+	@ManyToOne(optional = true, fetch=FetchType.LAZY, cascade={CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
 	@JoinColumn(name="reimb_resolver")
 	private Users resolver;
-	@ManyToOne(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
+	@ManyToOne(fetch=FetchType.LAZY, cascade={CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
 	@JoinColumn(name="reimb_status_id")
 	private ReimStatus status;
-	@ManyToOne(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
+	@ManyToOne(fetch=FetchType.LAZY, cascade={CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
 	@JoinColumn(name="reimb_type_id")
 	private ReimType type;
 	

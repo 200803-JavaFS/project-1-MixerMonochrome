@@ -37,6 +37,7 @@ public class LoginCont{
 						HttpSession ses = req.getSession();
 						ses.setAttribute("userId", u.getUserId());
 						ses.setAttribute("loggedin", true);
+						ses.setAttribute("userRole", u.getUserRole().getRoleId());
 						res.setStatus(200);
 						String json = om.writeValueAsString(u.getUserRole().getRoleId());
 						System.out.println(json);
@@ -57,6 +58,7 @@ public class LoginCont{
 		if (ses != null) {
 			ses.invalidate();
 			res.setStatus(200);
+			System.out.println(req.getSession(false));
 			res.getWriter().println("Logged out! Thank you :)");
 		} else {
 			res.setStatus(400);

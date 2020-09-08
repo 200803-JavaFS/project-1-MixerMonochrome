@@ -5,6 +5,7 @@ import java.sql.Timestamp;
 import com.revature.daos.ReimDao;
 import com.revature.daos.TypeDao;
 import com.revature.daos.UserDao;
+import com.revature.daos.StatusDao;
 import com.revature.models.Reimbursement;
 import com.revature.models.TicketDTO;
 
@@ -12,6 +13,7 @@ public class RequestServices {
 	private static UserDao udao = new UserDao();
 	private static TypeDao tdao = new TypeDao();
 	private static ReimDao redao = new ReimDao(); 
+	private static StatusDao sdao = new StatusDao();
 	public boolean submitTicket(TicketDTO t,int uid) {
 		Reimbursement r = new Reimbursement();
 		r.setAuthor(udao.findUserById(uid));
@@ -19,6 +21,7 @@ public class RequestServices {
 		r.setReimbDesc(t.reimbDesc);
 		r.setReimbRecpt(t.reimbRecpt);
 		r.setType(tdao.getTypeById(t.typeId));
+		r.setStatus(sdao.getStatusById(1));
 		r.setReimbSubbed(new Timestamp(System.currentTimeMillis()));
 		if(redao.insertTicket(r)) {
 			return true;

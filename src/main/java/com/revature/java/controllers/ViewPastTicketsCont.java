@@ -52,7 +52,6 @@ public class ViewPastTicketsCont {
 			t.type = r.getType().getType();
 			ticks.add(t);
 		}
-		System.out.println(ticks.toString());
 		res.getWriter().println(om.writeValueAsString(ticks));
 	}
 

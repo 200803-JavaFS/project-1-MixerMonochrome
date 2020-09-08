@@ -25,6 +25,19 @@
         </label>
 		</form>
 		<button type = "button" onclick = "filterReims()">Filter</button>
+		<div id = "submissionArea">
+			<form id = "subform">
+				
+			</form>
+		</div>
+		<input type="number" id = "aId">Account Id</input>
+		<select id="sId">
+			<option value = 2>Approve</option>
+			<option value = 3>Deny</option>
+		</select>
+		<button type = "button" onclick = "appDen()">Approve/Deny</button>
+		<button type = "button" onclick = "logout()">Logout</button>
+		<div id = "updateStatus"></div>
 	</body>
 	<!--ADD BUTTON FOR LOGOUT AND FORM FOR APPROVE/DENY. AUTO-REFRESH-->
 	<script src = "reimburseMe.js"></script>

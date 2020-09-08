@@ -8,6 +8,20 @@
     <body onload="getReims('viewPast')">
         <div id = "allReimHere"></div>
     </body>
+    <div id = "submissionArea">
+        <input type = "number" id = "reimbAmnt">Amount</input>
+        <input type = "text" id = "reimbDesc">Description</input>
+        <input type = "image" id = "reimbRecpt">Receipt</input>
+        <select id ="typeId">
+            <option value = 1>Lodging</option>
+            <option value = 2>Travel</option>
+            <option value = 3>Food</option>
+            <option value = 4>Other</option>
+        </select>
+    </div>
+    <button type = "button" onclick = "submitNew()">New Ticket</button>
+    <button type = "button" onclick = "logout()">Logout</button>
+    <div id = "appStatus"></div>
     <!--ADD BUTTON FOR LOGOUT AND FORM FOR SUBMIT TICKET. AUTOREFRESH WHEN SEND TICKET-->
     <script src = "reimburseMe.js"></script>
 </html>

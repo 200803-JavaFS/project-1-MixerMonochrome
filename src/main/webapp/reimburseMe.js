@@ -19,6 +19,7 @@ async function loginFunc() {
     if(resp.status===200){
         console.log(resp);
         let data = await resp.json();
+        sessionStorage.setItem("userRole",data);
         if (data == 1){
         	window.location = "viewPastTickets.html";
         }
@@ -38,42 +39,44 @@ async function getReims(call){
 		method: 'GET',
 		credentials: 'include'
 	})
-	
-    let table = document.createElement("table");
-    document.getElementById("allReimHere").appendChild(table);
-    let headers = document.createElement("thead");
-    table.appendChild(headers);
-    let tId = document.createElement("td");
-    let tAmn = document.createElement("td");
-    let tDes = document.createElement("td");
-    let tRecp = document.createElement("td");
-    let tStat = document.createElement("td");
-    let tType = document.createElement("td");
-    let tAuth = document.createElement("td");
-    let tSubm = document.createElement("td");
-    let tResl = document.createElement("td");
-    let tResd = document.createElement("td");
-    tId.innerText = "Ticket ID";
-    tAmn.innerText = "Amount";
-    tDes.innerText = "Description";
-    tRecp.innerText = "Receipt";
-    tStat.innerText = "Status";
-    tType.innerText = "Type";
-    tAuth.innerText = "Author";
-    tSubm.innerText = "Submitted";
-    tResl.innerText = "Resolver";
-    tResd.innerText = "Resolved";
-    headers.appendChild(tId);
-    headers.appendChild(tAmn);
-    headers.appendChild(tDes);
-    headers.appendChild(tRecp);
-    headers.appendChild(tStat);
-    headers.appendChild(tType);
-    headers.appendChild(tAuth);
-    headers.appendChild(tSubm);
-    headers.appendChild(tResl);
-    headers.appendChild(tResd);
+    
+    //ADD REDIRECTS IN PAGES
 	if (resp.status === 200){
+        let table = document.createElement("table");
+        document.getElementById("allReimHere").innerHTML = "";
+        document.getElementById("allReimHere").appendChild(table);
+        let headers = document.createElement("thead");
+        table.appendChild(headers);
+        let tId = document.createElement("td");
+        let tAmn = document.createElement("td");
+        let tDes = document.createElement("td");
+        let tRecp = document.createElement("td");
+        let tStat = document.createElement("td");
+        let tType = document.createElement("td");
+        let tAuth = document.createElement("td");
+        let tSubm = document.createElement("td");
+        let tResl = document.createElement("td");
+        let tResd = document.createElement("td");
+        tId.innerText = "Ticket ID";
+        tAmn.innerText = "Amount";
+        tDes.innerText = "Description";
+        tRecp.innerText = "Receipt";
+        tStat.innerText = "Status";
+        tType.innerText = "Type";
+        tAuth.innerText = "Author";
+        tSubm.innerText = "Submitted";
+        tResl.innerText = "Resolver";
+        tResd.innerText = "Resolved";
+        headers.appendChild(tId);
+        headers.appendChild(tAmn);
+        headers.appendChild(tDes);
+        headers.appendChild(tRecp);
+        headers.appendChild(tStat);
+        headers.appendChild(tType);
+        headers.appendChild(tAuth);
+        headers.appendChild(tSubm);
+        headers.appendChild(tResl);
+        headers.appendChild(tResd);
 		let data = await resp.json();
 		console.log(data);
 		for (let reim of data){
@@ -126,7 +129,17 @@ async function getReims(call){
             row.appendChild(reslvd);
             table.appendChild(row);
         }
-	}
+	}else if(resp.status === 401){
+        if(sessionStorage.getItem("userRole") == 1){
+            window.location = "viewPastTickets.html";
+        }
+        else if(sessionStorage.getItem("userRole") == 2){
+            window.location = "viewReimb.html";
+        }
+        else{
+             window.location = "login.html";
+        }
+    }
 }
 
 function filterReims(){
@@ -150,20 +163,60 @@ function filterReims(){
 }
 
 //ADDREIM FUNC!
+async function submitNew(){
+    let resp = await fetch (url + "request",{
+        method : 'POST',
+        body : JSON.stringify({
+            reimbAmnt : document.getElementById("reimbAmnt").value,
+            reimbDesc : document.getElementById("reimbDesc").value,
+            reimbRecpt : document.getElementById("reimbRecpt").value,
+            typeId : document.getElementById("typeId").value
+        }),
+        credentials : 'include'
+    })
+    if(resp.status === 200){
+        getReims('viewPast');
+        document.getElementById("appStatus").innerText = "Account Submitted";
+    }
+    else{
+        document.getElementById("appStatus").innerText = "Submission Failed";
+    }
+}
 
 //STRETCH - SUBMIT PHOTO FUNC (HELPER)
 
 //APPDEN REIM FUNC!
+async function appDen(){
+    let resp = await fetch(url + "appden", {
+        method : 'POST',
+        body : JSON.stringify({
+            aId : document.getElementById("aId").value,
+            sId : document.getElementById("sId").value
+        }),
+        credentials: 'include'
+    })
+    if (resp.status === 200){
+        getReims('viewAll');
+        document.getElementById("updateStatus").innerText = "Accounts Updated";
+    }
+    else if (resp.status == 401){
+        document.getElementById("updateStatus").innerText = "Non-Pending Account Cannot Be Altered";
+    }
+    else{
+        document.getElementById("updateStatus").innerText = "Update Failed";
+    }
+}
 
 //LOGOUT!
 async function logout(){
     let resp = await fetch(url + "logout",{
         method: 'POST',
-        credentials: 'inlude'
+        credentials: 'include'
     })
 
     if (resp.status === 200){
         window.location = "login.html";
+        sessionStorage.removeItem("userRole");
     }
 }
-//REDIRECT FUNC!
+
